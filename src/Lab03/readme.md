@@ -122,7 +122,7 @@ Before running your services in docker-compose it is necessary to set up a Rabbi
     1. Add rabbitmq to the demonet network
         1. `docker network connect demonet <container id>`
     1. Find the rabbitmq container's ip address in the network
-        1. `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container id>`
+        1. `docker inspect -f '{{range .NetworkSettings.Networks}} {{.IPAddress}}{{end}}' <container id>`
         1. You'll see two addresses, choose the 172.25.0.??? address from the demonet network
 
 At this point a RabbitMQ container is running in Docker Desktop on your workstation, and you have made note of the container's IP address _inside Docker_.
